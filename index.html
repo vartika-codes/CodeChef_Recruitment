@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeChef ABES EC | Events</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-icon">CC</div>
+
+            <div>
+                <h2>CodeChef</h2>
+                <span>ABES EC Chapter</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#about">About</a>
+            <button class="admin-btn" onclick="openAdmin()">
+                Admin
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="tag">CODECHEF ABES EC</p>
+
+                <h1>
+                    Code.
+                    <span>Compete.</span>
+                    Create.
+                </h1>
+
+                <p class="hero-text">
+                    Join the CodeChef ABES EC community, participate
+                    in exciting events, sharpen your coding skills and
+                    build something amazing.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#events" class="primary-btn">
+                        Explore Events
+                    </a>
+
+                    <a href="#about" class="secondary-btn">
+                        Know More
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="floating-code">
+                    <span>01</span>
+                    <span>10</span>
+                    <span>11</span>
+                </div>
+
+                <div class="terminal">
+
+                    <div class="terminal-top">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <p>
+                        <span class="purple">const</span>
+                        community =
+                        <span class="green">
+                            "CodeChef ABES EC"
+                        </span>;
+                    </p>
+
+                    <p>
+                        <span class="purple">if</span>
+                        (youLoveCoding) {
+                    </p>
+
+                    <p class="indent">
+                        joinCommunity();
+                    </p>
+
+                    <p>}</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about" id="about">
+
+            <div class="section-heading">
+                <p class="tag">WHO WE ARE</p>
+
+                <h2>
+                    A community built for
+                    <span>coders.</span>
+                </h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p>
+                        CodeChef ABES EC is a student-driven coding
+                        community focused on programming, problem
+                        solving, competitive coding and technology.
+                    </p>
+
+                    <p>
+                        We organize coding contests, workshops,
+                        hackathons and recruitment drives that help
+                        students learn, compete and connect.
+                    </p>
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat-card">
+                        <strong>500+</strong>
+                        <span>Members</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <strong>20+</strong>
+                        <span>Events</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <strong>10+</strong>
+                        <span>Workshops</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <strong>1</strong>
+                        <span>Community</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURED EVENT ================= -->
+
+        <section class="featured">
+
+            <div class="featured-content">
+
+                <p class="tag">FEATURED EVENT</p>
+
+                <h2>CodeChef Recruitment 2026</h2>
+
+                <p>
+                    Think you have what it takes to be part of
+                    CodeChef ABES EC? Join our recruitment drive
+                    and become a part of the coding community.
+                </p>
+
+                <div class="event-info">
+
+                    <span>📅 10 October 2026</span>
+                    <span>⏰ 10:00 AM</span>
+                    <span>📍 ABES Engineering College</span>
+
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="openRegistration('CodeChef Recruitment 2026')">
+                    Register Now
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EVENTS ================= -->
+
+        <section class="events-section" id="events">
+
+            <div class="section-heading events-heading">
+
+                <div>
+                    <p class="tag">WHAT'S HAPPENING</p>
+
+                    <h2>
+                        Upcoming <span>Events</span>
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search events..."
+                    oninput="displayEvents()"
+                >
+
+                <select
+                    id="categoryFilter"
+                    onchange="displayEvents()">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="Recruitment">
+                        Recruitment
+                    </option>
+
+                    <option value="Workshop">
+                        Workshop
+                    </option>
+
+                    <option value="Contest">
+                        Contest
+                    </option>
+
+                    <option value="Hackathon">
+                        Hackathon
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- EVENT CARDS -->
+
+            <div
+                class="events-grid"
+                id="eventsContainer">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= REGISTRATION MODAL ================= -->
+
+    <div
+        class="modal"
+        id="registrationModal">
+
+        <div class="modal-box">
+
+            <button
+                class="close-btn"
+                onclick="closeRegistration()">
+                ×
+            </button>
+
+            <p class="tag">EVENT REGISTRATION</p>
+
+            <h2 id="registrationTitle">
+                Register
+            </h2>
+
+            <form
+                id="registrationForm"
+                onsubmit="submitRegistration(event)">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="collegeYear"
+                    placeholder="College / Year"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="studentPhone"
+                    placeholder="Phone Number"
+                    pattern="[0-9]{10}"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn">
+                    Submit Registration
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ADMIN MODAL ================= -->
+
+    <div
+        class="modal"
+        id="adminModal">
+
+        <div class="admin-box">
+
+            <button
+                class="close-btn"
+                onclick="closeAdmin()">
+                ×
+            </button>
+
+            <div class="admin-header">
+
+                <div>
+                    <p class="tag">ADMIN PANEL</p>
+
+                    <h2>Event Dashboard</h2>
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="openAddEvent()">
+                    + Add Event
+                </button>
+
+            </div>
+
+
+            <!-- ADMIN EVENTS -->
+
+            <div id="adminEvents">
+            </div>
+
+
+            <!-- REGISTRATIONS -->
+
+            <div class="registrations-section">
+
+                <div class="admin-header">
+
+                    <div>
+                        <p class="tag">REGISTRATIONS</p>
+
+                        <h2>Registered Students</h2>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="registrationSearch"
+                        placeholder="Search student..."
+                        oninput="displayRegistrations()"
+                    >
+
+                </div>
+
+                <div
+                    class="table-container"
+                    id="registrationTable">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ADD / EDIT EVENT MODAL ================= -->
+
+    <div
+        class="modal"
+        id="eventModal">
+
+        <div class="modal-box">
+
+            <button
+                class="close-btn"
+                onclick="closeEventModal()">
+                ×
+            </button>
+
+            <p class="tag">ADMIN</p>
+
+            <h2 id="eventModalTitle">
+                Add Event
+            </h2>
+
+            <form
+                id="eventForm"
+                onsubmit="saveEvent(event)">
+
+                <input
+                    type="text"
+                    id="eventName"
+                    placeholder="Event Name"
+                    required
+                >
+
+                <select id="eventCategory" required>
+
+                    <option value="">
+                        Select Category
+                    </option>
+
+                    <option value="Recruitment">
+                        Recruitment
+                    </option>
+
+                    <option value="Workshop">
+                        Workshop
+                    </option>
+
+                    <option value="Contest">
+                        Contest
+                    </option>
+
+                    <option value="Hackathon">
+                        Hackathon
+                    </option>
+
+                </select>
+
+                <input
+                    type="date"
+                    id="eventDate"
+                    required
+                >
+
+                <input
+                    type="time"
+                    id="eventTime"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="eventVenue"
+                    placeholder="Venue"
+                    required
+                >
+
+                <textarea
+                    id="eventDescription"
+                    placeholder="Event Description"
+                    required>
+                </textarea>
+
+                <button
+                    class="primary-btn full-btn"
+                    type="submit">
+                    Save Event
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div>
+            <h3>CodeChef ABES EC</h3>
+
+            <p>
+                Building coders. Creating opportunities.
+            </p>
+        </div>
+
+        <p>
+            © 2026 CodeChef ABES EC
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
